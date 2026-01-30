@@ -30,7 +30,6 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
       <div className={`w-full h-full flex items-center justify-center ${isMobile ? "aspect-video" : ""}`}>
         <video
           autoPlay
-          muted
           playsInline
           onEnded={onComplete}
           controls={false}
