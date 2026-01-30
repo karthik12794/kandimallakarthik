@@ -124,7 +124,9 @@ export default function Certifications() {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur -z-10" />
 
                 <button
-                  onClick={() => setSelectedCert(cert)}
+                  onClick={() => {
+                    setSelectedCert(cert);
+                  }}
                   className="relative w-full h-full p-6 rounded-2xl bg-card border border-accent/30 group-hover:border-accent/60 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 flex flex-col text-left cursor-pointer"
                 >
                   {/* Header */}
