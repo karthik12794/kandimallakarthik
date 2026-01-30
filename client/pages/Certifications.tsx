@@ -1,54 +1,84 @@
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import { CertificateModal } from "@/components/CertificateModal";
 import { Award, BookOpen, CheckCircle2 } from "lucide-react";
 
-const certificationsData = [
+interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  icon: string;
+  description: string;
+  certificateUrl?: string;
+}
+
+const certificatesData: Certificate[] = [
   {
-    title: "Full Stack Development",
-    issuer: "Self-Initiated Learning",
-    date: "2024 - Present",
-    icon: "🚀",
-    description: "Comprehensive study of modern web technologies including React, Node.js, and cloud deployment",
+    id: "python-data-science",
+    title: "Python for Data Science",
+    issuer: "NPTEL (IIT Madras)",
+    date: "Jan-Feb 2025",
+    icon: "🐍",
+    description:
+      "Elite certification for successfully completing Python for Data Science course with a consolidated score of 72%. Certificate No: NPTEL25CS60S331600053. This course covers fundamental and advanced concepts in data science using Python.",
+    certificateUrl: "#",
   },
   {
-    title: "Cybersecurity & Data Privacy",
-    issuer: "Professional Development",
-    date: "2024",
-    icon: "🔒",
-    description: "Advanced understanding of security principles, ethical hacking, and data protection",
+    id: "cloud-computing",
+    title: "Cloud Computing",
+    issuer: "NPTEL (IIT Kharagpur)",
+    date: "Jul-Oct 2025",
+    icon: "☁️",
+    description:
+      "Elite certification for successfully completing Cloud Computing (12-week course) with a consolidated score of 66%. Certificate No: NPTEL25CS107S164900097. Comprehensive study of cloud computing architecture, services, and deployment models.",
+    certificateUrl: "#",
   },
   {
-    title: "Ethical Hacking Fundamentals",
-    issuer: "Technology Education",
-    date: "2023 - 2024",
-    icon: "🛡️",
-    description: "Security awareness and ethical hacking practices for building secure applications",
+    id: "cpp-programming",
+    title: "C++ Programming",
+    issuer: "Saylor Academy",
+    date: "May 30, 2025",
+    icon: "⚙️",
+    description:
+      "Certificate of Achievement for CS107: C++ Programming. 40-hour comprehensive course covering object-oriented programming concepts, memory management, and advanced C++ features. Grade: 77.50. Certificate ID: 0934641704KK",
+    certificateUrl: "#",
   },
   {
-    title: "Problem Solving & Algorithm Design",
-    issuer: "Computer Science Studies",
-    date: "2023 - Present",
-    icon: "🧩",
-    description: "Data structures, algorithms, and computational problem-solving techniques",
+    id: "software-engineering",
+    title: "Software Engineering",
+    issuer: "Saylor Academy",
+    date: "May 30, 2025",
+    icon: "💻",
+    description:
+      "Certificate of Achievement for CS302: Software Engineering. 36-hour course covering software development lifecycle, design patterns, testing methodologies, and best practices. Grade: 75.81. Certificate ID: 8009418818KK",
+    certificateUrl: "#",
   },
   {
-    title: "Operations & Project Management",
-    issuer: "Professional Experience",
-    date: "2023 - Present",
-    icon: "📊",
-    description: "Project planning, team coordination, and operational excellence practices",
+    id: "c-programming",
+    title: "C Programming Course",
+    issuer: "Infosys Springboard",
+    date: "May 6, 2025",
+    icon: "🔤",
+    description:
+      "Course Completion Certificate for C Programming Course. Successfully completed comprehensive training in C programming fundamentals, data structures, and programming concepts. Issued by Infosys Limited with Springboard certification.",
+    certificateUrl: "#",
   },
   {
-    title: "Technology & Innovation Leadership",
-    issuer: "Continuous Learning",
-    date: "2024 - Present",
-    icon: "💡",
-    description: "Staying updated with latest technologies and innovation in the tech industry",
+    id: "data-labeling",
+    title: "Data Labeling Job Simulation",
+    issuer: "Forage",
+    date: "December 12, 2025",
+    icon: "🏷️",
+    description:
+      "Certificate of Completion for Data Labeling Job Simulation. Completed practical tasks in Batch Labeling & PII Awareness and Review, Quality Control & Iteration. This practical simulation provided hands-on experience in data preparation and quality assurance processes. Enrolment Verification Code: uXrcu5ghvpHoYgHZA",
+    certificateUrl: "#",
   },
 ];
 
 export default function Certifications() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -62,6 +92,8 @@ export default function Certifications() {
       <section className="relative py-24 md:py-32 pt-32">
         <div className="absolute inset-0 -z-10">
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-glow"></div>
+          {/* Additional 3D background elements */}
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-glow" style={{ animationDelay: "1.5s" }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,57 +102,51 @@ export default function Certifications() {
               Certifications & Achievements
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto animate-slide-in-up">
-              Continuous learning and professional development through certifications and specialized training
+              Professional certifications and continuous learning achievements from renowned institutions
             </p>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Certificates Grid */}
       <section className="py-20 border-t border-accent/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {certificationsData.map((cert, index) => (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certificatesData.map((cert, index) => (
               <div
-                key={index}
+                key={cert.id}
                 className="group relative animate-slide-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Timeline line */}
-                {index !== certificationsData.length - 1 && (
-                  <div className="absolute left-8 top-20 w-0.5 h-20 bg-gradient-to-b from-accent to-transparent group-hover:from-primary transition-colors" />
-                )}
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur -z-10" />
 
-                <div className="flex gap-6">
-                  {/* Timeline dot */}
-                  <div className="flex-shrink-0 flex items-start">
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-card border-2 border-accent group-hover:border-primary group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300">
-                      <span className="text-2xl">{cert.icon}</span>
+                <button
+                  onClick={() => setSelectedCert(cert)}
+                  className="relative w-full h-full p-6 rounded-2xl bg-card border border-accent/30 group-hover:border-accent/60 transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 flex flex-col text-left cursor-pointer"
+                >
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <div className="text-5xl mb-3">{cert.icon}</div>
+                      <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:gradient-text transition-all">
+                        {cert.title}
+                      </h3>
+                      <p className="text-accent font-semibold text-sm">
+                        {cert.issuer}
+                      </p>
                     </div>
+                    <Award className="h-6 w-6 text-accent opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-grow pt-2">
-                    <div className="p-6 rounded-2xl bg-card border border-accent/30 group-hover:border-accent/60 group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-300">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all">
-                            {cert.title}
-                          </h3>
-                          <p className="text-accent font-semibold mt-1">{cert.issuer}</p>
-                        </div>
-                        <Award className="h-6 w-6 text-accent opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                      </div>
-
-                      <p className="text-foreground/70 mb-3">{cert.description}</p>
-
-                      <div className="flex items-center gap-2 text-sm text-foreground/60">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                        {cert.date}
-                      </div>
-                    </div>
+                  {/* Date */}
+                  <div className="mt-auto pt-4 border-t border-accent/20">
+                    <p className="text-foreground/60 text-sm">{cert.date}</p>
+                    <p className="text-accent text-xs mt-2 font-medium">
+                      Click to view certificate →
+                    </p>
                   </div>
-                </div>
+                </button>
               </div>
             ))}
           </div>
@@ -136,18 +162,18 @@ export default function Certifications() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              "Modern Web Technologies",
-              "Security & Cybersecurity",
-              "Full Stack Development",
-              "Database Design",
-              "Cloud Computing",
-              "System Architecture",
-              "Problem Solving",
-              "Team Leadership",
-              "Project Management",
-              "Data Privacy",
-              "Software Best Practices",
-              "Continuous Integration",
+              "Python for Data Science",
+              "Cloud Computing Architecture",
+              "C++ Advanced Programming",
+              "Software Engineering Best Practices",
+              "C Programming Fundamentals",
+              "Data Labeling & Quality Control",
+              "Object-Oriented Programming",
+              "System Design & Architecture",
+              "Database Management",
+              "Data Privacy & Security",
+              "Testing & Quality Assurance",
+              "Team Leadership & Collaboration",
             ].map((skill, index) => (
               <div
                 key={index}
@@ -162,25 +188,25 @@ export default function Certifications() {
         </div>
       </section>
 
-      {/* Learning Path */}
+      {/* Learning Journey */}
       <section className="py-20 border-t border-accent/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center gradient-text animate-slide-in-down">
-            Continuous Learning
+            Continuous Learning Journey
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Technical Excellence",
+                title: "Advanced Technical Skills",
                 description:
-                  "Staying updated with the latest frameworks, tools, and best practices in web development",
+                  "Specialized training in Python, C++, Cloud Computing, and Software Engineering from top-tier institutions like NPTEL and Saylor Academy",
                 icon: BookOpen,
               },
               {
-                title: "Security & Privacy",
+                title: "Practical Industry Experience",
                 description:
-                  "Deep understanding of cybersecurity principles and ethical hacking for secure applications",
+                  "Hands-on experience through job simulations and real-world projects covering data labeling, quality control, and data preparation",
                 icon: Award,
               },
             ].map((item, index) => {
@@ -202,6 +228,12 @@ export default function Certifications() {
           </div>
         </div>
       </section>
+
+      {/* Certificate Modal */}
+      <CertificateModal
+        certificate={selectedCert}
+        onClose={() => setSelectedCert(null)}
+      />
 
       {/* Footer */}
       <footer className="border-t border-accent/20 py-8 bg-card/30">
