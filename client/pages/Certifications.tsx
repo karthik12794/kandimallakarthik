@@ -146,8 +146,8 @@ export default function Certifications() {
                   {/* Date */}
                   <div className="mt-auto pt-4 border-t border-accent/20">
                     <p className="text-foreground/60 text-sm">{cert.date}</p>
-                    <p className="text-accent text-xs mt-2 font-medium">
-                      Click to view certificate →
+                    <p className="text-accent text-xs mt-2 font-medium hover:text-primary transition-colors">
+                      View on LinkedIn →
                     </p>
                   </div>
                 </a>
