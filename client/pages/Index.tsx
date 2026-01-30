@@ -2,13 +2,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { ImageCard3D } from "@/components/ThreeD/ImageCard3D";
+import { IntroVideo } from "@/components/IntroVideo";
+import { Animated3DName } from "@/components/Animated3DName";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { ArrowRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const photoUrl =
   "https://cdn.builder.io/api/v1/image/assets%2F561ea15e518d4b43bc85a4244ae1b5ff%2Fe08f9d5d28a44a8d955a13153f8c8d47?format=webp&width=800&height=1200";
 
+const introVideoUrl =
+  "https://cdn.builder.io/o/assets%2F561ea15e518d4b43bc85a4244ae1b5ff%2F8dec621b21874b63be0935083d1fe2f5?alt=media&token=4e473d1e-fdb2-4e55-88ab-b94b3172114a&apiKey=561ea15e518d4b43bc85a4244ae1b5ff";
+
 export default function Index() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+  const [showAnimatedName, setShowAnimatedName] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
