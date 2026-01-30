@@ -33,11 +33,13 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
           muted
           playsInline
           onEnded={onComplete}
+          controls={false}
           className={`w-full ${
             isMobile ? "h-screen object-cover" : "max-w-6xl max-h-screen object-contain"
           }`}
           style={{
             aspectRatio: isMobile ? "16 / 9" : "auto",
+            filter: "brightness(1.05) contrast(1.1)",
           }}
         >
           <source src={videoUrl} type="video/mp4" />
