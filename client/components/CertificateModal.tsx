@@ -85,7 +85,11 @@ export function CertificateModal({
                 href={certificate.certificateUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(certificate.certificateUrl, '_blank');
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 cursor-pointer"
               >
                 View Full Certificate
                 <ChevronRight className="h-4 w-4" />
