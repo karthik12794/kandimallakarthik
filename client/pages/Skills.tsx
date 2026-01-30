@@ -15,12 +15,22 @@ const skillsData = [
   },
   {
     category: "Full Stack",
-    skills: ["Full Stack Development", "Full-Stack Development", "Flutter", "SQL"],
+    skills: [
+      "Full Stack Development",
+      "Full-Stack Development",
+      "Flutter",
+      "SQL",
+    ],
     color: "from-green-500 to-emerald-500",
   },
   {
     category: "Security & Best Practices",
-    skills: ["Data Privacy", "Cybersecurity", "Ethical Hacking", "Problem Solving"],
+    skills: [
+      "Data Privacy",
+      "Cybersecurity",
+      "Ethical Hacking",
+      "Problem Solving",
+    ],
     color: "from-red-500 to-orange-500",
   },
   {
@@ -59,7 +69,8 @@ export default function Skills() {
               Skills & Expertise
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto animate-slide-in-up">
-              A comprehensive overview of my technical skills and professional expertise
+              A comprehensive overview of my technical skills and professional
+              expertise
             </p>
           </div>
         </div>
@@ -75,10 +86,13 @@ export default function Skills() {
                 className={`group relative animate-slide-in-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur -z-10" style={{
-                  backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
-                }} />
-                
+                <div
+                  className="absolute inset-0 bg-gradient-to-r rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur -z-10"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
+                  }}
+                />
+
                 <div className="relative p-6 rounded-2xl bg-card border border-accent/30 group-hover:border-accent/60 transition-all duration-300 h-full hover:shadow-lg hover:shadow-accent/20">
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-lg font-bold text-foreground group-hover:gradient-text transition-all">
@@ -123,10 +137,18 @@ export default function Skills() {
               { name: "UI/UX & TailwindCSS", level: 92 },
               { name: "Security & Best Practices", level: 85 },
             ].map((skill, index) => (
-              <div key={index} className="animate-slide-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={index}
+                className="animate-slide-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="flex justify-between mb-2">
-                  <span className="font-medium text-foreground">{skill.name}</span>
-                  <span className="text-accent font-semibold">{skill.level}%</span>
+                  <span className="font-medium text-foreground">
+                    {skill.name}
+                  </span>
+                  <span className="text-accent font-semibold">
+                    {skill.level}%
+                  </span>
                 </div>
                 <div className="h-3 bg-card rounded-full overflow-hidden border border-accent/30">
                   <div

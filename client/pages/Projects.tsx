@@ -5,7 +5,8 @@ import { Github, ExternalLink, Code2, Calendar } from "lucide-react";
 const projectsData = [
   {
     name: "Doorstep",
-    description: "A comprehensive solution for service delivery and management at your doorstep",
+    description:
+      "A comprehensive solution for service delivery and management at your doorstep",
     technologies: ["React", "Node.js", "MongoDB", "TailwindCSS"],
     github: "https://github.com/karthik12794",
     status: "Active",
@@ -13,7 +14,8 @@ const projectsData = [
   },
   {
     name: "FeelTalk",
-    description: "A social networking platform for meaningful conversations and connections",
+    description:
+      "A social networking platform for meaningful conversations and connections",
     technologies: ["React", "Express", "MongoDB", "Socket.io"],
     github: "https://github.com/karthik12794",
     status: "Active",
@@ -52,7 +54,8 @@ export default function Projects() {
               My Projects
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto animate-slide-in-up">
-              Real-world applications built with modern technologies and best practices
+              Real-world applications built with modern technologies and best
+              practices
             </p>
           </div>
         </div>
@@ -82,7 +85,9 @@ export default function Projects() {
                         <span className="px-2 py-1 rounded-full bg-primary/20 text-primary">
                           {project.category}
                         </span>
-                        <span className={`px-2 py-1 rounded-full ${project.status === "Active" ? "bg-green-500/20 text-green-400" : "bg-yellow-500/20 text-yellow-400"}`}>
+                        <span
+                          className={`px-2 py-1 rounded-full ${project.status === "Active" ? "bg-green-500/20 text-green-400" : "bg-yellow-500/20 text-yellow-400"}`}
+                        >
                           {project.status}
                         </span>
                       </div>
@@ -147,8 +152,14 @@ export default function Projects() {
               { number: "15+", label: "Technologies Used" },
               { number: "100%", label: "Custom Built" },
             ].map((stat, index) => (
-              <div key={index} className="animate-slide-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <p className="text-4xl font-bold gradient-text mb-2">{stat.number}</p>
+              <div
+                key={index}
+                className="animate-slide-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <p className="text-4xl font-bold gradient-text mb-2">
+                  {stat.number}
+                </p>
                 <p className="text-foreground/60">{stat.label}</p>
               </div>
             ))}

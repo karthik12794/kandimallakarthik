@@ -13,7 +13,7 @@ export function Animated3DName({
 }: Animated3DNameProps) {
   const [displayedLetters, setDisplayedLetters] = useState<string[]>([]);
   const [phase, setPhase] = useState<"appearing" | "disappearing" | "complete">(
-    "appearing"
+    "appearing",
   );
 
   useEffect(() => {
@@ -29,22 +29,25 @@ export function Animated3DName({
               // Wait then start disappearing
               setTimeout(() => setPhase("disappearing"), 1500);
             }
-          }, i * 80)
+          }, i * 80),
         );
       }
     } else if (phase === "disappearing") {
       // Letters disappearing one by one
       for (let i = text.length; i >= 0; i--) {
         timeouts.push(
-          setTimeout(() => {
-            setDisplayedLetters(text.split("").slice(0, i));
-            if (i === 0) {
-              setTimeout(() => {
-                setPhase("complete");
-                onComplete?.();
-              }, 500);
-            }
-          }, (text.length - i) * 60)
+          setTimeout(
+            () => {
+              setDisplayedLetters(text.split("").slice(0, i));
+              if (i === 0) {
+                setTimeout(() => {
+                  setPhase("complete");
+                  onComplete?.();
+                }, 500);
+              }
+            },
+            (text.length - i) * 60,
+          ),
         );
       }
     }
@@ -117,7 +120,9 @@ export function Animated3DName({
                        0 0 90px rgba(168, 85, 247, 0.3);
         }
       `}</style>
-      <div className={`text-container gradient-text text-6xl md:text-7xl font-extrabold leading-tight`}>
+      <div
+        className={`text-container gradient-text text-6xl md:text-7xl font-extrabold leading-tight`}
+      >
         {displayedLetters.map((letter, index) => (
           <span key={index} className="letter">
             {letter === " " ? "\u00A0" : letter}

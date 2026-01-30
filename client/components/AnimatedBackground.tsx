@@ -79,7 +79,14 @@ export function AnimatedBackground() {
         }
 
         // Draw particle with glow
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);
+        const gradient = ctx.createRadialGradient(
+          p.x,
+          p.y,
+          0,
+          p.x,
+          p.y,
+          p.size * 3,
+        );
         gradient.addColorStop(0, `rgba(168, 85, 247, ${p.life * 0.6})`);
         gradient.addColorStop(0.5, `rgba(139, 92, 246, ${p.life * 0.3})`);
         gradient.addColorStop(1, `rgba(139, 92, 246, 0)`);
@@ -106,7 +113,7 @@ export function AnimatedBackground() {
       // Draw floating bubbles
       for (let i = 0; i < 5; i++) {
         const bubbleY = (Math.sin(time + i) * 50 + 100) % canvas.height;
-        const bubbleX = (canvas.width * (i / 5)) + Math.cos(time * 0.5 + i) * 30;
+        const bubbleX = canvas.width * (i / 5) + Math.cos(time * 0.5 + i) * 30;
         const bubbleSize = 20 + Math.sin(time + i) * 10;
 
         // Bubble outline with glow
@@ -123,11 +130,11 @@ export function AnimatedBackground() {
           0,
           bubbleX,
           bubbleY,
-          bubbleSize
+          bubbleSize,
         );
         bubbleGradient.addColorStop(
           0,
-          `rgba(168, 85, 247, ${0.1 + Math.sin(time + i) * 0.05})`
+          `rgba(168, 85, 247, ${0.1 + Math.sin(time + i) * 0.05})`,
         );
         bubbleGradient.addColorStop(1, "rgba(168, 85, 247, 0)");
         ctx.fillStyle = bubbleGradient;
@@ -151,7 +158,10 @@ export function AnimatedBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 -z-20"
-      style={{ background: "linear-gradient(135deg, #0f0018 0%, #1a0033 50%, #0f0018 100%)" }}
+      style={{
+        background:
+          "linear-gradient(135deg, #0f0018 0%, #1a0033 50%, #0f0018 100%)",
+      }}
     />
   );
 }

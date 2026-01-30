@@ -15,7 +15,8 @@ function Text3DContent({ text, color = "#8B5CF6", scale = 1 }: Text3DProps) {
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.003;
-      meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
+      meshRef.current.position.y =
+        Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
     }
   });
 

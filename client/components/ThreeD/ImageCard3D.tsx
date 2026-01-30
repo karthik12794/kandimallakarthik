@@ -48,11 +48,7 @@ export function ImageCard3D({ src, alt, className = "" }: ImageCard3DProps) {
       {/* Card container */}
       <div className="relative bg-card rounded-3xl overflow-hidden border border-accent/30 shadow-2xl">
         {/* Image */}
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover"
-        />
+        <img src={src} alt={alt} className="w-full h-full object-cover" />
 
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>

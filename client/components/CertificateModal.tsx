@@ -31,7 +31,10 @@ export function CertificateModal({
       {/* 3D animated background inside modal */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-glow"></div>
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: "1s" }}></div>
+        <div
+          className="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/20 rounded-full blur-3xl animate-glow"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       <div
@@ -87,7 +90,7 @@ export function CertificateModal({
                 rel="noopener noreferrer"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.open(certificate.certificateUrl, '_blank');
+                  window.open(certificate.certificateUrl, "_blank");
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 cursor-pointer"
               >

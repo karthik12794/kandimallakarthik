@@ -59,14 +59,22 @@ export default function Index() {
           {/* Animated background gradient */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: "1s" }}></div>
-            <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-glow" style={{ animationDelay: "0.5s" }}></div>
+            <div
+              className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-glow"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-200px)]">
               {/* Left Content */}
-              <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
+              <div
+                className={`space-y-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+              >
                 {/* Greeting */}
                 <div className="space-y-4">
                   <div className="inline-block">
@@ -82,7 +90,9 @@ export default function Index() {
 
                   {/* Subtitle */}
                   <p className="text-lg md:text-xl text-foreground/70 max-w-xl leading-relaxed">
-                    Full Stack Developer passionate about building beautiful, scalable applications with modern technologies. Crafting digital experiences that matter.
+                    Full Stack Developer passionate about building beautiful,
+                    scalable applications with modern technologies. Crafting
+                    digital experiences that matter.
                   </p>
                 </div>
 
@@ -139,11 +149,18 @@ export default function Index() {
                 <div className="grid grid-cols-2 gap-4 pt-8 border-t border-accent/20">
                   <div className="animate-slide-in-up">
                     <p className="text-3xl font-bold gradient-text">45+</p>
-                    <p className="text-foreground/60 text-sm">GitHub Projects</p>
+                    <p className="text-foreground/60 text-sm">
+                      GitHub Projects
+                    </p>
                   </div>
-                  <div className="animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
+                  <div
+                    className="animate-slide-in-up"
+                    style={{ animationDelay: "0.1s" }}
+                  >
                     <p className="text-3xl font-bold gradient-text">5+</p>
-                    <p className="text-foreground/60 text-sm">Full Stack Apps</p>
+                    <p className="text-foreground/60 text-sm">
+                      Full Stack Apps
+                    </p>
                   </div>
                 </div>
               </div>
@@ -152,7 +169,11 @@ export default function Index() {
               <div
                 className={`relative h-[500px] md:h-[600px] transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
               >
-                <ImageCard3D src={photoUrl} alt="Kandimalla Karthik" className="w-full h-full" />
+                <ImageCard3D
+                  src={photoUrl}
+                  alt="Kandimalla Karthik"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
@@ -206,7 +227,8 @@ export default function Index() {
               Ready to work together?
             </h2>
             <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-              Explore my skills, projects, and certifications. Let's create something amazing together.
+              Explore my skills, projects, and certifications. Let's create
+              something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

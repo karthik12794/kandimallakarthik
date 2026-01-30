@@ -30,12 +30,19 @@ const NotFound = () => {
             Page Not Found
           </p>
 
-          <p className="text-lg text-foreground/70 mb-8 max-w-xl mx-auto animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
-            Oops! It looks like the page you're looking for doesn't exist. Let's get you back on track.
+          <p
+            className="text-lg text-foreground/70 mb-8 max-w-xl mx-auto animate-slide-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Oops! It looks like the page you're looking for doesn't exist. Let's
+            get you back on track.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <Link
               to="/"
               className="px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 flex items-center justify-center gap-2 group"
@@ -52,7 +59,10 @@ const NotFound = () => {
           </div>
 
           {/* Suggestions */}
-          <div className="p-8 rounded-2xl bg-card border border-accent/30 animate-slide-in-up" style={{ animationDelay: "0.3s" }}>
+          <div
+            className="p-8 rounded-2xl bg-card border border-accent/30 animate-slide-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
             <h3 className="text-lg font-bold text-foreground mb-4">
               Quick Links
             </h3>

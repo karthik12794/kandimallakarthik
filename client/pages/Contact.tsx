@@ -24,7 +24,7 @@ export default function Contact() {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,7 +57,8 @@ export default function Contact() {
               Get in Touch
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto animate-slide-in-up">
-              Let's collaborate and create something amazing together. Reach out through any channel that works for you.
+              Let's collaborate and create something amazing together. Reach out
+              through any channel that works for you.
             </p>
           </div>
         </div>
@@ -68,7 +69,9 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
-            <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
+            <div
+              className={`space-y-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+            >
               <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
 
               {/* Email */}
@@ -80,7 +83,9 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-accent group-hover:text-background" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">Email</h3>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    Email
+                  </h3>
                   <p className="text-foreground/70 group-hover:text-accent transition-colors">
                     kandimallakarthik4@gmail.com
                   </p>
@@ -99,7 +104,9 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-accent group-hover:text-background" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">Phone</h3>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    Phone
+                  </h3>
                   <p className="text-foreground/70 group-hover:text-accent transition-colors">
                     +91 9573218680
                   </p>
@@ -136,7 +143,9 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className={`transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
+            <div
+              className={`transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+            >
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6 p-8 rounded-2xl bg-card border border-accent/30 hover:border-accent/60 transition-all"
@@ -246,7 +255,11 @@ export default function Contact() {
                   key={index}
                   href={option.href}
                   target={option.href.startsWith("http") ? "_blank" : undefined}
-                  rel={option.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    option.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="group p-8 rounded-2xl bg-card border border-accent/30 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-center animate-slide-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -254,7 +267,9 @@ export default function Contact() {
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {option.title}
                   </h3>
-                  <p className="text-foreground/70 mb-4">{option.description}</p>
+                  <p className="text-foreground/70 mb-4">
+                    {option.description}
+                  </p>
                   <span className="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all">
                     {option.action}
                     <ArrowRight className="h-4 w-4" />

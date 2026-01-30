@@ -23,18 +23,25 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: "1s" }}></div>
+        <div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-glow"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       {/* Video Container */}
-      <div className={`w-full h-full flex items-center justify-center ${isMobile ? "aspect-video" : ""}`}>
+      <div
+        className={`w-full h-full flex items-center justify-center ${isMobile ? "aspect-video" : ""}`}
+      >
         <video
           autoPlay
           playsInline
           onEnded={onComplete}
           controls={false}
           className={`w-full ${
-            isMobile ? "h-screen object-cover" : "max-w-6xl max-h-screen object-contain"
+            isMobile
+              ? "h-screen object-cover"
+              : "max-w-6xl max-h-screen object-contain"
           }`}
           style={{
             aspectRatio: isMobile ? "16 / 9" : "auto",
