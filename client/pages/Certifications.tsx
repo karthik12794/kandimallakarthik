@@ -13,6 +13,8 @@ interface Certificate {
   certificateUrl?: string;
 }
 
+const linkedinProfileUrl = "https://linkedin.com/in/kandimalla-karthik";
+
 const certificatesData: Certificate[] = [
   {
     id: "python-data-science",
@@ -22,7 +24,7 @@ const certificatesData: Certificate[] = [
     icon: "🐍",
     description:
       "Elite certification for successfully completing Python for Data Science course with a consolidated score of 72%. Certificate No: NPTEL25CS60S331600053. This course covers fundamental and advanced concepts in data science using Python.",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
   {
     id: "cloud-computing",
@@ -32,7 +34,7 @@ const certificatesData: Certificate[] = [
     icon: "☁️",
     description:
       "Elite certification for successfully completing Cloud Computing (12-week course) with a consolidated score of 66%. Certificate No: NPTEL25CS107S164900097. Comprehensive study of cloud computing architecture, services, and deployment models.",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
   {
     id: "cpp-programming",
@@ -42,7 +44,7 @@ const certificatesData: Certificate[] = [
     icon: "⚙️",
     description:
       "Certificate of Achievement for CS107: C++ Programming. 40-hour comprehensive course covering object-oriented programming concepts, memory management, and advanced C++ features. Grade: 77.50. Certificate ID: 0934641704KK",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
   {
     id: "software-engineering",
@@ -52,7 +54,7 @@ const certificatesData: Certificate[] = [
     icon: "💻",
     description:
       "Certificate of Achievement for CS302: Software Engineering. 36-hour course covering software development lifecycle, design patterns, testing methodologies, and best practices. Grade: 75.81. Certificate ID: 8009418818KK",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
   {
     id: "c-programming",
@@ -62,7 +64,7 @@ const certificatesData: Certificate[] = [
     icon: "🔤",
     description:
       "Course Completion Certificate for C Programming Course. Successfully completed comprehensive training in C programming fundamentals, data structures, and programming concepts. Issued by Infosys Limited with Springboard certification.",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
   {
     id: "data-labeling",
@@ -72,7 +74,7 @@ const certificatesData: Certificate[] = [
     icon: "🏷️",
     description:
       "Certificate of Completion for Data Labeling Job Simulation. Completed practical tasks in Batch Labeling & PII Awareness and Review, Quality Control & Iteration. This practical simulation provided hands-on experience in data preparation and quality assurance processes. Enrolment Verification Code: uXrcu5ghvpHoYgHZA",
-    certificateUrl: "#",
+    certificateUrl: linkedinProfileUrl,
   },
 ];
 
