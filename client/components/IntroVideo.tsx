@@ -8,15 +8,34 @@ interface IntroVideoProps {
 export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
+    const checkOrientation = () => {
+      if (window.innerWidth < 768) {
+        setIsLandscape(window.innerWidth > window.innerHeight);
+      }
+    };
     checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    checkOrientation();
+    window.addEventListener("resize", () => {
+      checkMobile();
+      checkOrientation();
+    });
+    window.addEventListener("orientationchange", () => {
+      setTimeout(() => {
+        checkMobile();
+        checkOrientation();
+      }, 100);
+    });
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("orientationchange", checkOrientation);
+    };
   }, []);
 
   useEffect(() => {
