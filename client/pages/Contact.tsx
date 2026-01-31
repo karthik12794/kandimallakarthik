@@ -19,6 +19,7 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [redirectingUrl, setRedirectingUrl] = useState<string | null>(null);
 
   useEffect(() => {
     setIsLoaded(true);
