@@ -66,7 +66,11 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
 
       {/* Video Container */}
       <div
-        className={`w-full h-full flex items-center justify-center ${isMobile ? "aspect-video" : ""}`}
+        className={`w-full flex items-center justify-center ${
+          isMobile
+            ? "aspect-video"
+            : "h-screen"
+        }`}
       >
         {!isLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-50">
@@ -82,13 +86,12 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
           playsInline
           onEnded={onComplete}
           controls={false}
-          className={`w-full ${
+          className={`w-full h-full ${
             isMobile
-              ? "h-screen object-cover"
-              : "max-w-6xl max-h-screen object-contain"
+              ? "object-cover"
+              : "object-contain"
           }`}
           style={{
-            aspectRatio: isMobile ? "16 / 9" : "auto",
             filter: "brightness(1.05) contrast(1.1)",
             backgroundColor: "#000",
           }}
