@@ -85,10 +85,12 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
 
       {/* Video Container */}
       <div
-        className={`w-full flex items-center justify-center ${
-          isMobile
-            ? "aspect-video"
-            : "h-screen"
+        className={`flex items-center justify-center ${
+          isMobile && isLandscape
+            ? "w-screen h-screen"
+            : isMobile
+            ? "w-full aspect-video"
+            : "w-full h-screen"
         }`}
       >
         {!isLoaded && (
