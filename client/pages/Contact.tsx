@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import { Redirect3D } from "@/components/ThreeD/Redirect3D";
 import {
   Mail,
   Phone,
