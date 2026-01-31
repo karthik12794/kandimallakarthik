@@ -125,7 +125,9 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
       {/* Skip button */}
       <button
         onClick={onComplete}
-        className="absolute top-6 right-6 px-4 py-2 rounded-lg bg-accent/20 text-accent hover:bg-accent/40 transition-all border border-accent/50 text-sm font-medium z-10"
+        className={`absolute px-4 py-2 rounded-lg bg-accent/20 text-accent hover:bg-accent/40 transition-all border border-accent/50 text-sm font-medium z-10 ${
+          isMobile && isLandscape ? "top-3 right-3" : "top-6 right-6"
+        }`}
       >
         Skip Intro →
       </button>
