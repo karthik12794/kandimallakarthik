@@ -68,7 +68,16 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
       <div
         className={`w-full h-full flex items-center justify-center ${isMobile ? "aspect-video" : ""}`}
       >
+        {!isLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-50">
+            <div className="text-center">
+              <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-accent text-sm">Loading intro...</p>
+            </div>
+          </div>
+        )}
         <video
+          ref={videoRef}
           autoPlay
           playsInline
           onEnded={onComplete}
@@ -81,6 +90,7 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
           style={{
             aspectRatio: isMobile ? "16 / 9" : "auto",
             filter: "brightness(1.05) contrast(1.1)",
+            backgroundColor: "#000",
           }}
         >
           <source src={videoUrl} type="video/mp4" />
