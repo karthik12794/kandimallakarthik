@@ -76,6 +76,16 @@ const certificatesData: Certificate[] = [
       "Certificate of Completion for Data Labeling Job Simulation. Completed practical tasks in Batch Labeling & PII Awareness and Review, Quality Control & Iteration. This practical simulation provided hands-on experience in data preparation and quality assurance processes. Enrolment Verification Code: uXrcu5ghvpHoYgHZA",
     certificateUrl: linkedinProfileUrl,
   },
+  {
+    id: "web-dev-fundamentals",
+    title: "Web Development Fundamentals",
+    issuer: "IBM SkillsBuild",
+    date: "August 10, 2025",
+    icon: "🌐",
+    description:
+      "Certificate of Completion for Web Development Fundamentals. Comprehensive course covering foundational web development concepts, HTML, CSS, JavaScript, and modern web technologies through IBM SkillsBuild platform.",
+    certificateUrl: linkedinProfileUrl,
+  },
 ];
 
 export default function Certifications() {
