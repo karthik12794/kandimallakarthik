@@ -5,6 +5,7 @@ import { ImageCard3D } from "@/components/ThreeD/ImageCard3D";
 import { IntroVideo } from "@/components/IntroVideo";
 import { Animated3DName } from "@/components/Animated3DName";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { Redirect3D } from "@/components/ThreeD/Redirect3D";
 import { ArrowRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const photoUrl =
