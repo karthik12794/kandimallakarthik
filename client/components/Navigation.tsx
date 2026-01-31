@@ -16,8 +16,18 @@ export default function Navigation() {
     { name: "Contact", href: "/contact" },
   ];
 
+  const handleExternalRedirect = (url: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    setRedirectingUrl(url);
+  };
+
   return (
-    <nav className="fixed top-0 w-full z-50 glass-effect border-b border-accent/30">
+    <>
+      <Redirect3D
+        isActive={!!redirectingUrl}
+        targetUrl={redirectingUrl || undefined}
+      />
+      <nav className="fixed top-0 w-full z-50 glass-effect border-b border-accent/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
@@ -75,5 +85,6 @@ export default function Navigation() {
         </div>
       )}
     </nav>
+    </>
   );
 }
