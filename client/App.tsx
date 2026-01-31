@@ -23,8 +23,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PageTransition />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/certifications" element={<Certifications />} />
