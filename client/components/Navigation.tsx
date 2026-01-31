@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Redirect3D } from "./ThreeD/Redirect3D";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [redirectingUrl, setRedirectingUrl] = useState<string | null>(null);
 
   const links = [
     { name: "Home", href: "/" },
