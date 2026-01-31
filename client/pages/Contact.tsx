@@ -132,22 +132,24 @@ export default function Contact() {
                   Follow Me
                 </h3>
                 <div className="flex gap-4">
-                  <a
-                    href="https://linkedin.com/in/kandimalla-karthik"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-card border border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300 group hover:shadow-lg hover:shadow-accent/30"
+                  <button
+                    onClick={() =>
+                      handleExternalRedirect(
+                        "https://linkedin.com/in/kandimalla-karthik"
+                      )
+                    }
+                    className="p-4 rounded-full bg-card border border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300 group hover:shadow-lg hover:shadow-accent/30 cursor-pointer"
                   >
                     <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                  </a>
-                  <a
-                    href="https://github.com/karthik12794"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-card border border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300 group hover:shadow-lg hover:shadow-accent/30"
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleExternalRedirect("https://github.com/karthik12794")
+                    }
+                    className="p-4 rounded-full bg-card border border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300 group hover:shadow-lg hover:shadow-accent/30 cursor-pointer"
                   >
                     <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
