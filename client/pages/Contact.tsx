@@ -32,6 +32,10 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleExternalRedirect = (url: string) => {
+    setRedirectingUrl(url);
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Here you would typically send the form data to a backend
