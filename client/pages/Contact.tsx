@@ -262,17 +262,18 @@ export default function Contact() {
               },
             ].map((option, index) => {
               const Icon = option.icon;
+              const isExternal = option.href.startsWith("http");
               return (
-                <a
+                <button
                   key={index}
-                  href={option.href}
-                  target={option.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    option.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="group p-8 rounded-2xl bg-card border border-accent/30 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-center animate-slide-in-up"
+                  onClick={() => {
+                    if (isExternal) {
+                      handleExternalRedirect(option.href);
+                    } else {
+                      window.location.href = option.href;
+                    }
+                  }}
+                  className="group p-8 rounded-2xl bg-card border border-accent/30 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-center animate-slide-in-up w-full cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <Icon className="h-8 w-8 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
@@ -286,7 +287,7 @@ export default function Contact() {
                     {option.action}
                     <ArrowRight className="h-4 w-4" />
                   </span>
-                </a>
+                </button>
               );
             })}
           </div>
