@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface IntroVideoProps {
   videoUrl: string;
@@ -6,8 +6,9 @@ interface IntroVideoProps {
 }
 
 export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -17,6 +18,40 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      setIsLoaded(true);
+      video.play().catch((err) => {
+        console.error("Error playing video:", err);
+        // If autoplay fails, still continue
+        setIsLoaded(true);
+      });
+    };
+
+    const handleLoadedMetadata = () => {
+      setIsLoaded(true);
+    };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+
+    // Force play after a short delay
+    const playTimeout = setTimeout(() => {
+      video.play().catch(() => {
+        setIsLoaded(true);
+      });
+    }, 100);
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      clearTimeout(playTimeout);
+    };
+  }, [videoUrl]);
 
   return (
     <div className="w-full h-screen flex items-center justify-center bg-background relative overflow-hidden">
