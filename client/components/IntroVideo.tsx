@@ -89,8 +89,8 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
           isMobile && isLandscape
             ? "w-screen h-screen"
             : isMobile
-            ? "w-full aspect-video"
-            : "w-full h-screen"
+              ? "w-full aspect-video"
+              : "w-full h-screen"
         }`}
       >
         {!isLoaded && (
@@ -108,9 +108,7 @@ export function IntroVideo({ videoUrl, onComplete }: IntroVideoProps) {
           onEnded={onComplete}
           controls={false}
           className={`w-full h-full ${
-            isMobile
-              ? "object-cover"
-              : "object-contain"
+            isMobile ? "object-cover" : "object-contain"
           }`}
           style={{
             filter: "brightness(1.05) contrast(1.1)",

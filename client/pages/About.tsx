@@ -71,7 +71,8 @@ export default function About() {
                   Aspiring Full Stack Developer
                 </p>
                 <p className="text-foreground/70">
-                  Building innovative digital solutions with passion and precision
+                  Building innovative digital solutions with passion and
+                  precision
                 </p>
               </div>
 
@@ -152,7 +153,9 @@ export default function About() {
                   className="group p-8 rounded-2xl bg-card border border-accent/30 hover:border-accent/60 transition-all hover:shadow-lg hover:shadow-accent/20 animate-slide-in-up"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${hobby.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <div
+                    className={`w-12 h-12 rounded-lg bg-gradient-to-r ${hobby.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  >
                     <Icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:gradient-text transition-all">

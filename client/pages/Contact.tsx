@@ -135,7 +135,7 @@ export default function Contact() {
                   <button
                     onClick={() =>
                       handleExternalRedirect(
-                        "https://linkedin.com/in/kandimalla-karthik"
+                        "https://linkedin.com/in/kandimalla-karthik",
                       )
                     }
                     className="p-4 rounded-full bg-card border border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300 group hover:shadow-lg hover:shadow-accent/30 cursor-pointer"

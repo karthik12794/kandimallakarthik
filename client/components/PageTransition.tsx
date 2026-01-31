@@ -62,8 +62,19 @@ export function PageTransition() {
       <div className="page-transition w-full h-full"></div>
 
       {/* Glow effects */}
-      <div className="page-transition-glow" style={{ top: "50%", left: "25%", transform: "translate(-50%, -50%)" }}></div>
-      <div className="page-transition-glow" style={{ top: "50%", left: "75%", transform: "translate(-50%, -50%)", animationDelay: "0.1s" }}></div>
+      <div
+        className="page-transition-glow"
+        style={{ top: "50%", left: "25%", transform: "translate(-50%, -50%)" }}
+      ></div>
+      <div
+        className="page-transition-glow"
+        style={{
+          top: "50%",
+          left: "75%",
+          transform: "translate(-50%, -50%)",
+          animationDelay: "0.1s",
+        }}
+      ></div>
     </div>
   );
 }
