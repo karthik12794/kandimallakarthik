@@ -49,6 +49,10 @@ export default function Contact() {
 
   return (
     <div className="w-full bg-background text-foreground min-h-screen">
+      <Redirect3D
+        isActive={!!redirectingUrl}
+        targetUrl={redirectingUrl || undefined}
+      />
       <Navigation />
 
       {/* Hero Section */}
